@@ -67,8 +67,12 @@ export default function CartDrawer() {
                 className="flex gap-4 bg-white rounded-lg p-3 border border-gold/10"
               >
                 {/* Thumbnail */}
-                <div className="w-16 h-16 rounded-lg bg-cream flex items-center justify-center flex-shrink-0">
-                  <span className="font-script text-gold text-sm">VE</span>
+                <div className="w-16 h-16 rounded-lg bg-cream overflow-hidden flex-shrink-0">
+                  <img
+                    src={item.product.images?.[0] || item.product.image}
+                    alt={item.product.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 {/* Info */}

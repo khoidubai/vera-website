@@ -40,6 +40,7 @@ export const PRODUCTS: Product[] = [
       "/products/sp2.jpg",
       "/products/sp3.jpg",
       "/products/sp4.jpg",
+      "/products/sp5.jpg"
     ],
     tag: null,
     category: "Chiến thuật",

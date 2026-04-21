@@ -12,15 +12,16 @@ export function generateStaticParams() {
 
 /**
  * ProductPage - Trang chi tiết sản phẩm
- * @param params - Chứa slug từ URL
+ * @param params - Chứa slug từ URL (Promise trong Next.js 15+)
  * @returns JSX trang chi tiết hoặc 404
  */
-export default function ProductPage({
+export default async function ProductPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const product = getProductBySlug(params.slug);
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
 
   if (!product) {
     notFound();
